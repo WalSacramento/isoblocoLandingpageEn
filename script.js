@@ -175,3 +175,90 @@ customersCarousel.addEventListener("mousedown", customerDragStart);
 customersCarousel.addEventListener("mousemove", customerDragging);
 document.addEventListener("mouseup", customerDragStop);
 customersCarousel.addEventListener("scroll", customerInfiniteScroll);
+
+const brandWrapper = document.querySelector(".brandWrapper");
+const brandCarousel = document.querySelector(".brandCarousel");
+const firstBrandWidth = brandCarousel.querySelector(".brand").offsetWidth;
+const brandArrowBtns = document.querySelectorAll(".brandsArrows span");
+const brandCarouselChildrens = [...brandCarousel.children];
+
+let brandIsDragging = false,
+  brandStartX,
+  brandStartScrollLeft;
+
+// Get the number of brand cards that can fit in the carousel at once
+let brandCardPerView = Math.round(brandCarousel.offsetWidth / firstBrandWidth);
+
+// Insert copies of the last few brand cards to the beginning of carousel for infinite scrolling
+brandCarouselChildrens.slice(-brandCardPerView).reverse().forEach((brandCard) => {
+  brandCarousel.insertAdjacentHTML("afterbegin", brandCard.outerHTML);
+});
+
+// Insert copies of the first few brand cards to the end of carousel for infinite scrolling
+brandCarouselChildrens.slice(0, brandCardPerView).forEach((brandCard) => {
+  brandCarousel.insertAdjacentHTML("beforeend", brandCard.outerHTML);
+});
+
+// Scroll the brand carousel at the appropriate position to hide the first few duplicate brand cards on Firefox
+brandCarousel.classList.add("no-transition");
+brandCarousel.scrollLeft = brandCarousel.offsetWidth;
+brandCarousel.classList.remove("no-transition");
+
+// Add event listeners for the arrow buttons to scroll the brand carousel left and right
+brandArrowBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    brandCarousel.scrollLeft +=
+      btn.id == "left" ? -firstBrandWidth : firstBrandWidth;
+  });
+});
+
+const brandDragStart = (e) => {
+  brandIsDragging = true;
+  brandCarousel.classList.add("dragging");
+  // Records the initial cursor and scroll position of the brand carousel
+  brandStartX = e.pageX;
+  brandStartScrollLeft = brandCarousel.scrollLeft;
+};
+
+const brandDragging = (e) => {
+  if (!brandIsDragging) return; // if brandIsDragging is false return from here
+  // Updates the scroll position of the brand carousel based on the cursor movement
+  brandCarousel.scrollLeft = brandStartScrollLeft - (e.pageX - brandStartX);
+};
+
+const brandDragStop = () => {
+  brandIsDragging = false;
+  brandCarousel.classList.remove("dragging");
+};
+
+const brandInfiniteScroll = () => {
+  // If the brand carousel is at the beginning, scroll to the end
+  if (brandCarousel.scrollLeft === 0) {
+    brandCarousel.classList.add("no-transition");
+    brandCarousel.scrollLeft =
+      brandCarousel.scrollWidth - 2 * brandCarousel.offsetWidth;
+    brandCarousel.classList.remove("no-transition");
+  }
+  // If the brand carousel is at the end, scroll to the beginning
+  else if (
+    Math.ceil(brandCarousel.scrollLeft) ===
+    brandCarousel.scrollWidth - brandCarousel.offsetWidth
+  ) {
+    brandCarousel.classList.add("no-transition");
+    brandCarousel.scrollLeft = brandCarousel.offsetWidth;
+    brandCarousel.classList.remove("no-transition");
+  }
+};
+
+// Função para rolar automaticamente os cards das marcas
+const autoScrollBrands = () => {
+  brandCarousel.scrollLeft += firstBrandWidth;
+};
+
+// Configure um intervalo para rolar automaticamente os cards das marcas
+const scrollInterval = setInterval(autoScrollBrands, 3000); // Rola a cada 3 segundos
+
+brandCarousel.addEventListener("mousedown", brandDragStart);
+brandCarousel.addEventListener("mousemove", brandDragging);
+document.addEventListener("mouseup", brandDragStop);
+brandCarousel.addEventListener("scroll", brandInfiniteScroll);
