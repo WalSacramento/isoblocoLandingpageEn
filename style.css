@@ -556,30 +556,6 @@ nav .navbar-logo {
   color: var(--cinzaTexto);
 }
 
-.customersArrows {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 2rem 0;
-}
-
-.customersArrows span {
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  font-size: 1.25rem;
-  text-align: center;
-  line-height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
-  margin-right: 2rem;
-  user-select: none;
-}
-
 .brandLogoSection {
   width: 100%;
   height: 100%;
@@ -623,73 +599,6 @@ nav .navbar-logo {
   flex-wrap: nowrap;
 }
 
-.brandWrapper .brandCarousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 7));
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 16px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.brandWrapper {
-  max-width: 1100px;
-  width: 100%;
-}
-
-.brandCarousel::-webkit-scrollbar {
-  display: none;
-}
-.brandCarousel.no-transition {
-  scroll-behavior: auto;
-}
-.brandCarousel.dragging {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
-.brandCarousel.dragging .card {
-  cursor: grab;
-  user-select: none;
-}
-
-.brandCarousel :where(.card, .img) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.brandsArrows {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0 2rem 0;
-}
-
-.brandsArrows span {
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  font-size: 1.25rem;
-  text-align: center;
-  line-height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
-  margin-right: 2rem;
-  user-select: none;
-}
-
-.brand {
-  list-style: none;
-  display: flex;
-}
-
 .brandLogo {
   width: 100%;
   display: flex;
@@ -728,7 +637,9 @@ nav .navbar-logo {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--verdeIsobloco) !important; /* Por exemplo, vermelho para ativo */
+  background-color: var(
+    --verdeIsobloco
+  ) !important; /* Por exemplo, vermelho para ativo */
 }
 
 #partners {
@@ -742,30 +653,6 @@ nav .navbar-logo {
 
 #partners img {
   max-height: 100%;
-}
-
-.partnersArrows {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0 2rem 0;
-}
-
-.partnesArrows span {
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  font-size: 1.25rem;
-  text-align: center;
-  line-height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
-  margin-right: 2rem;
-  user-select: none;
 }
 
 .recentBlogSection {
@@ -896,76 +783,6 @@ nav .navbar-logo {
   color: #fff;
 }
 
-.title {
-  margin: 2rem 0 2rem 0;
-}
-
-.container-question-group {
-  background-color: #f1f1f1;
-  color: black;
-  border-radius: 20px;
-  box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.25);
-  margin: 20px 0;
-  max-width: 100%;
-}
-
-.container-question {
-  background-color: #fff;
-  color: black;
-  border-radius: 20px;
-  box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.25);
-  margin: 20px;
-}
-
-.containet-question::after {
-  content: '\002B';
-  font-size: 2.2rem;
-  position: absolute;
-  right: 20px;
-}
-
-.container-question.active::after {
-  transform: rotate(45deg);
-}
-
-.question {
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 20px 80px 20px 20px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.question::after {
-  content: '\002B';
-  font-size: 2.2rem;
-  position: absolute;
-  right: 20px;
-  /* transition: 0.2s; */
-}
-
-.question.active::after {
-  transform: rotate(45deg);
-}
-
-.answercont {
-  max-height: 0;
-  overflow: hidden;
-}
-
-.answer {
-  padding: 0 20px 20px;
-  line-height: 1.5rem;
-}
-
-.divider {
-  width: 100%;
-  border-bottom: 1px solid var(--verdeIsobloco);
-  margin: 10px 0;
-}
-
 img {
   max-width: 100%;
 }
@@ -1015,13 +832,123 @@ footer img {
     align-items: center;
   }
 
-  .container-question {
-    margin: 20px 0;
+  .navbar {
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
   }
 
-  .answer {
-    padding: 0 10px 20px;
-    font-size: 0.9rem;
+  .navbar-logo {
+    margin: 5%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .burguer {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+  }
+
+  .navbar-menu.show {
+    display: flex;
+  }
+
+  .navbar-menu li {
+    margin-left: 0px;
+    margin: 2px;
+  }
+
+  .features {
+    margin-top: 0;
+  }
+
+  .featuresText {
+    width: 100%;
+  }
+
+  .featuresLogos {
+    width: 100%;
+  }
+
+  .aboutIsobloco {
+    height: 100%;
+  }
+
+  .aboutIsoblocoText {
+    width: 90%;
+  }
+
+  .aboutIsobloco h2 {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .aboutIsobloco h4 {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .aboutIsoblocoCards {
+    width: 100%;
+  }
+
+  .aboutCard {
+    width: 100%;
+  }
+
+  .videoSection {
+    height: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .videoSectionText {
+    width: 100%;
+  }
+
+  .videoSectionText h2 {
+    font-size: 2rem;
+  }
+
+  .videoSectionVideo {
+    width: 80%;
+  }
+
+  .customersSectionText {
+    width: 100%;
+  }
+
+  .customersSectionText h2 {
+    font-size: 2rem;
+  }
+
+  .recentBlogSectionText {
+    width: 100%;
+  }
+
+  .recentBlogSectionText h2 {
+    font-size: 2rem;
+  }
+
+  .recentBlogCards {
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .blogCard {
+    width: 100%;
+  }
+
+  .contactSection {
+    width: 80%;
   }
 }
 

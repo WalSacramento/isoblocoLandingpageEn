@@ -1,4 +1,4 @@
-const partnersCarousel = new Swiper('#partners', {
+const productsCarousel = new Swiper('#products', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
@@ -10,8 +10,8 @@ const partnersCarousel = new Swiper('#partners', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '#nextPartner',
-    prevEl: '#prevPartner',
+    nextEl: '#nextProduct',
+    prevEl: '#prevProduct',
   },
 
   // And if we need scrollbar
@@ -22,38 +22,23 @@ const partnersCarousel = new Swiper('#partners', {
     delay: 2000, // Tempo em milissegundos entre cada slide
     disableOnInteraction: false
   },
-  slidesPerView: 2,
 
-});
-
-const clientsCarousel = new Swiper('#clients', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    1024: {
+      slidesPerView: 3.5,
+      spaceBetween: 50,
+    },
   },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '#nextClient',
-    prevEl: '#prevClient',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-  autoplay: {
-    delay: 2000, // Tempo em milissegundos entre cada slide
-    disableOnInteraction: false
-  },
-  slidesPerView: 6,
-  spaceBetween: 30,
-
-});
+})
 
 const customersCarousel = new Swiper('#customers', {
   // Optional parameters
@@ -82,10 +67,9 @@ const customersCarousel = new Swiper('#customers', {
   slidesPerView: 2,
   spaceBetween: 30,
 
-});
+})
 
-
-const productsCarousel = new Swiper('#products', {
+const partnersCarousel = new Swiper('#partners', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
@@ -97,8 +81,49 @@ const productsCarousel = new Swiper('#products', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '#nextProduct',
-    prevEl: '#prevProduct',
+    nextEl: '#nextPartner',
+    prevEl: '#prevPartner',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  autoplay: {
+    delay: 2000, // Tempo em milissegundos entre cada slide
+    disableOnInteraction: false
+  }, 
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    1024: {
+      slidesPerView: 3.5,
+      spaceBetween: 50,
+    },
+  },
+
+});
+
+const clientsCarousel = new Swiper('#clients', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '#nextClient',
+    prevEl: '#prevClient',
   },
 
   // And if we need scrollbar
@@ -109,9 +134,29 @@ const productsCarousel = new Swiper('#products', {
     delay: 2000, // Tempo em milissegundos entre cada slide
     disableOnInteraction: false
   },
-  slidesPerView: 3.5,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+    1024: {
+      slidesPerView: 6,
+      spaceBetween: 50,
+    },
+  },
 
 });
+
+
+
 
 
 
