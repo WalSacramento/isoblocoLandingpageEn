@@ -64,8 +64,26 @@ const customersCarousel = new Swiper('#customers', {
     delay: 2000, // Tempo em milissegundos entre cada slide
     disableOnInteraction: false
   },
-  slidesPerView: 2,
-  spaceBetween: 30,
+  // slidesPerView: 2,
+  // spaceBetween: 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 50,
+    },
+  },
 
 })
 
