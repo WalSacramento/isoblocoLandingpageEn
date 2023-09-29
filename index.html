@@ -157,7 +157,7 @@
           </div>
           <div class="aboutIsoblocoContent">
             <div class="aboutIsoblocoImg">
-              <img src="./src/img/isoblocoReal.jpg" alt="Logo Isobloco" />
+              <img src="./src/img/IsoblocoImgPitch.png" alt="Logo Isobloco" />
             </div>
 
             <div class="aboutIsoblocoCards">
@@ -468,7 +468,7 @@
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="customerCard">
+                  <div class="customerCard" id="teste">
                     <div class="customerCardImage">
                       <img
                         src="./src/img/customers/logo_lpr.jpg"
@@ -511,7 +511,9 @@
                           tinha parado no primeiro.”
                         </p>
                       </div>
-                      <button>Ver mais</button>
+                      <button class="customerCardButton" onclick="mostrarDepoimento()">
+                        <p>Leia Mais</p>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -548,7 +550,9 @@
                           mim, foi algo factível.”
                         </p>
                       </div>
-                      <button>Ver mais</button>
+                      <div class="customerCardButton">
+                        <p>Leia Mais</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -581,7 +585,9 @@
                           do resultado”
                         </p>
                       </div>
-                      <button>Ver mais</button>
+                      <div class="customerCardButton">
+                        <p>Leia Mais</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -617,7 +623,9 @@
                           dessa realidade, entendeu?”
                         </p>
                       </div>
-                      <button>Ver mais</button>
+                      <div class="customerCardButton">
+                        <p>Leia Mais</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -748,7 +756,6 @@
                           resultado. Deus abençoes todos vocês.”
                         </p>
                       </div>
-                      <button>Ver mais</button>
                     </div>
                   </div>
                 </div>
@@ -986,7 +993,6 @@
               <div class="swiper-pagination"></div>
 
               <div class="swiper-scrollbar"></div>
-
             </div>
             <div class="arrows">
               <div class="button-prev" id="prevClient">
@@ -1005,9 +1011,7 @@
           </div>
 
           <div class="swiper" id="partners">
-
             <div class="swiper-wrapper">
-
               <div class="swiper-slide" data-swiper-autoplay="100">
                 <div class="swiper-slide-div">
                   <img

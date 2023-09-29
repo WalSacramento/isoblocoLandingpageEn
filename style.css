@@ -134,7 +134,7 @@ nav .navbar-logo {
   width: 80%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -195,16 +195,16 @@ nav .navbar-logo {
 
 .aboutIsoblocoImg {
   width: 30rem;
-  height: 25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border-radius: 5%;
+  border-radius: 20px;
 }
 
 .aboutIsoblocoImg img {
   max-width: 100%;
+  border-radius: 20px;
 }
 
 .aboutIsoblocoContent {
@@ -227,7 +227,7 @@ nav .navbar-logo {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #e7effb;
   padding: 1.5rem 0;
 }
 
@@ -463,6 +463,14 @@ nav .navbar-logo {
   flex-wrap: wrap;
 }
 
+
+.customerCard.expandido {
+  max-height: 100vh;
+}
+
+
+
+
 #customers {
   width: 80vw;
   height: auto;
@@ -527,17 +535,13 @@ nav .navbar-logo {
 }
 
 .customerCardFooter button {
-  width: 10rem;
-  height: 3rem;
-  background-color: var(--verdeIsobloco);
+  background-color: #fff;
   border: none;
-  border-radius: 20px;
-  color: #fff;
-  font-weight: 600;
+}
+
+.customerCardFooter button p {
+  text-decoration: underline;
   font-size: 1rem;
-  cursor: pointer;
-  transition: 0.2s;
-  margin: 0.5rem 0 1rem 0;
 }
 
 .customerCardText {
@@ -555,6 +559,19 @@ nav .navbar-logo {
 
 .customerCardHeader p {
   color: var(--cinzaTexto);
+}
+
+.customerCardButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0 0 0;
+  cursor: pointer;
+}
+
+.customerCardButton p {
+  text-decoration: underline;
 }
 
 .brandLogoSection {
@@ -657,7 +674,6 @@ nav .navbar-logo {
 }
 
 .partnersSectionText {
-  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
